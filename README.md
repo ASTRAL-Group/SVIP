@@ -11,7 +11,7 @@ Our protocol leverages the **hidden states** of the LLM as unique model identifi
 
 We have conducted extensive experiments with 5 widely-used open-source LLM ranging from 13B to 70B parameters, demonstrating that SVIP achieves **false negative rates below 5%** and **false positive rates under 3%**, while requiring less than **0.01 seconds per query** for verification. Furthermore, SVIP has shown remarkable robustness against various adaptive adversarial scenarios, proving to be an accurate, generalizable, computationally efficient, and secure solution for verifiable LLM inference.
 
-Please refer to our paper for more details.
+Please refer to our paper for more details: https://arxiv.org/abs/2410.22307[https://arxiv.org/abs/2410.22307].
 
 ## Protocol Overview
 <p align="center">
