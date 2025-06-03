@@ -5,13 +5,15 @@
   <img src="./figs/protocol_explain.png" alt="Problem Setting of verifiable inference for LLMs" title="Problem Setting" style="max-width: 100%; height: auto;">
 </p>
 
-This repository contains the implementation of **SVIP**, a secret-based verifiable LLM inference protocol. [**Read the paper here**](https://arxiv.org/abs/2410.22307). SVIP is designed to address a critical security issue when users rely on computing providers for LLM inference via black-box APIs: *the providers may stealthily substitute the requested LLM with a smaller, less capable model to save resources, compromising output quality while still charging users for the larger model.*
+This repository contains the implementation of **SVIP**, a secret-based verifiable LLM inference protocol. [**Read the paper here**](https://arxiv.org/abs/2410.22307). 
+
+SVIP is designed to address a critical security issue when users rely on computing providers for LLM inference via black-box APIs: *the providers may stealthily substitute the requested LLM with a smaller, less capable model to save resources, compromising output quality while still charging users for the larger model.*
 
 Our protocol leverages the **hidden states** of the LLM as unique model identifiers to verify whether the correct model is used during inference. A well-designed proxy task model is trained exclusively on the hidden states produced by the requested model. During deployment, the computing provider is required to return both the generated text and the corresponding hidden states of the LLM to the user, who can then verify whether the requested LLM is used for inference by assessing the performance of the proxy task model on these hidden states. If the proxy task model performs well, it provides strong evidence that the correct LLM was used. To further enhance security, SVIP incorporates a **secret-based mechanism**, making it difficult for a malicious computing provider to fake or bypass the verification process. 
 
 We have conducted extensive experiments with 5 widely-used open-source LLM ranging from 13B to 70B parameters, demonstrating that SVIP achieves **false negative rates below 5%** and **false positive rates under 3%**, while requiring less than **0.01 seconds per query** for verification. Furthermore, SVIP has shown remarkable robustness against various adaptive adversarial scenarios, proving to be an accurate, generalizable, computationally efficient, and secure solution for verifiable LLM inference.
 
-Please refer to our paper for more details: https://arxiv.org/abs/2410.22307[https://arxiv.org/abs/2410.22307].
+Please refer to our paper for more details.
 
 ## Protocol Overview
 <p align="center">
